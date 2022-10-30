@@ -57,5 +57,4 @@ const getPhotosArray = () => {
 };
 
 const allPhotos = getPhotosArray();
-console.log(allPhotos);
-
+export{allPhotos};
