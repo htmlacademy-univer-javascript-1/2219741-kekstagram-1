@@ -10,5 +10,4 @@ const getRandomInt = (min, max) => {
 
 const checkStringLength = (str, max = 100) => str.length <= max;
 
-export {checkStringLength};
-export {getRandomInt};
+export {getRandomInt, checkStringLength};
