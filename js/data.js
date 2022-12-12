@@ -27,9 +27,9 @@ const getUnicId = () => {
 
 const getComment = () => ({
   id: getUnicId(),
-  avatar: `img/avatar-${getRandomInt(0, 1)}.svg`,
-  message: MESSAGES[getRandomInt(0, MESSAGES.length)],
-  name: NAMES[getRandomInt(0, NAMES.length)]
+  avatar: `img/avatar-${getRandomInt(1, 6)}.svg`,
+  message: MESSAGES[getRandomInt(0, MESSAGES.length - 1)],
+  name: NAMES[getRandomInt(0, NAMES.length - 1)]
 });
 
 const getPhoto = (id) => ({
