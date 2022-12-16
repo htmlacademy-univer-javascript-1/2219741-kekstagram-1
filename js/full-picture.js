@@ -3,21 +3,23 @@ import { setComments } from './comments.js';
 const bigPicture = document.querySelector('.big-picture');
 const closeButton = bigPicture.querySelector('.big-picture__cancel');
 
-const onCloseButtonClick = () => {
+function onCloseButtonClick() {
   bigPicture.classList.add('hidden');
   document.querySelector('body').classList.remove('modal-open');
 
   document.removeEventListener('click', onCloseButtonClick);
-};
+  document.removeEventListener('keydown', onDocumentEscKeydown);
+}
 
-const onDocumentEscKeydown = (evt) => {
+function onDocumentEscKeydown (evt){
   if (evt.key === 'Escape') {
     bigPicture.classList.add('hidden');
     document.querySelector('body').classList.remove('modal-open');
 
     document.removeEventListener('keydown', onDocumentEscKeydown);
+    document.removeEventListener('click', onCloseButtonClick);
   }
-};
+}
 
 const onPictureClick = (pictureData) => {
   bigPicture.classList.remove('hidden');
