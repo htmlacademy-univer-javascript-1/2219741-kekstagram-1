@@ -3,7 +3,7 @@ import { getRandomInt } from './util.js';
 const COUNT_PHOTOS = 25;
 const COUNT_COMMENTS = {
   min: 1,
-  max: 3
+  max: 11
 };
 const MAX_COMMENT_ID = 200;
 const LIKES = {
@@ -48,5 +48,4 @@ const getPhotosArray = () => {
   return photos;
 };
 
-const allPhotos = getPhotosArray();
-export{allPhotos};
+export{getPhotosArray};
