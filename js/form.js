@@ -1,3 +1,6 @@
+import { setScale } from './scaler.js';
+import { setEffects } from './effects.js';
+
 const body = document.querySelector('body');
 const form = document.querySelector('.img-upload__form');
 const formOverlay = document.querySelector('.img-upload__overlay');
@@ -31,6 +34,8 @@ const onFormInput = () => {
 
   exitButton.addEventListener('click', onExitButtonClick);
   document.addEventListener('keydown', onDocumentEscKeydown);
+  setEffects();
+  setScale();
 };
 
 formInput.oninput = onFormInput;
