@@ -1,7 +1,5 @@
-import { getPhotosArray } from './data.js';
 import { onPictureClick } from './full-picture.js';
 
-const allPhotos = getPhotosArray();
 const pictures = document.querySelector('.pictures');
 const picturesTimplate = document.querySelector('#picture').content.querySelector('.picture');
 const fragment = document.createDocumentFragment();
@@ -25,5 +23,4 @@ const renderPhotos = (photos) => {
   pictures.appendChild(fragment);
 };
 
-renderPhotos(allPhotos);
-
+export {renderPhotos};

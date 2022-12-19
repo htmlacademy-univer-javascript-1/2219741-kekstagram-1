@@ -90,9 +90,9 @@ const setEffects = () => {
   currentEffect = 'effects__preview--none';
 
   uploadingPicture.style.filter = effects.none();
-};
 
-sliderItem.noUiSlider.on('change', onSliderChange);
-effectsList.addEventListener('click', onEffectsClick);
+  sliderItem.noUiSlider.on('change', onSliderChange);
+  effectsList.addEventListener('click', onEffectsClick);
+};
 
 export{setEffects};
