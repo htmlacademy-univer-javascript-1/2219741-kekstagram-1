@@ -1,9 +1,9 @@
-import { renderPhotos } from './pictures.js';
-import { sendRequest} from './fetch.js';
-import {showAlert} from './utils.js';
+import { onRecieveSuccess } from './upload-data.js';
+import { sendRequest } from './fetch.js';
+import { showAlert } from './utils.js';
 
 const onSuccess = (data) => {
-  renderPhotos(data);
+  onRecieveSuccess(data);
 };
 
 const onFail = (error) =>{
