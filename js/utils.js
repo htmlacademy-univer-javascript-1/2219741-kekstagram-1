@@ -1,4 +1,5 @@
 const ALERT_SHOW_TIME = 5000;
+const DEBOUNCE_DELAY = 500;
 
 const checkStringLength = (str, max = 100) => str.length <= max;
 
@@ -23,4 +24,23 @@ const showAlert = (message) => {
   }, ALERT_SHOW_TIME);
 };
 
-export {checkStringLength, showAlert};
+const debounce = (callback) => {
+  let timeoutId;
+
+  return (...rest) => {
+    clearTimeout(timeoutId);
+
+    timeoutId = setTimeout(() => callback.apply(this, rest), DEBOUNCE_DELAY);
+  };
+};
+
+const shuffle = (array) => {
+  for(let firstIndex = array.length - 1; firstIndex > 0; firstIndex--) {
+    const randomIndex = Math.floor(Math.random() * (firstIndex + 1));
+    [array[firstIndex], array[randomIndex]] = [array[randomIndex], array[firstIndex]];
+  }
+
+  return array;
+};
+
+export {checkStringLength, showAlert, debounce, shuffle};
